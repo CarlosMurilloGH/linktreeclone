@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react';
 import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
-import { auth, userExists } from '../firebase/firebase';
+import { auth, getUserInfo, registerNewUser, userExists } from '../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 
 export default function AuthProvider({children, onUserLoggedIn, onUserNotLoggedIn,onUserNotRegistered}) {
@@ -12,8 +12,20 @@ export default function AuthProvider({children, onUserLoggedIn, onUserNotLoggedI
         if(user){
             const isRegistered = await userExists(user.uid);
             if(isRegistered){
-                onUserLoggedIn(user);
+                const userInfo= await getUserInfo(user.uid);
+                if(userInfo.processCompleted){
+                    onUserLoggedIn(userInfo);
+                }else{
+                    onUserNotRegistered(userInfo);
+                }
             }else{
+                await registerNewUser({
+                    uid:user.uid,
+                    displayName:user.displayName,
+                    profilePicture:"",
+                    username:"",
+                    processCompleted:false
+                });
                 onUserNotRegistered(user);
             }
         }else{

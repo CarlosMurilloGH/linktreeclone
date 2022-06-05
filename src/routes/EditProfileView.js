@@ -1,8 +1,11 @@
 import React from 'react'
+import DashboardWrapper from '../components/DashboardWrapper'
 
 export default function EditProfileView() {
   return (
-    <div>EditProfileView</div>
+    <DashboardWrapper>
+      Edit Profile
+    </DashboardWrapper>
   )
 }
 

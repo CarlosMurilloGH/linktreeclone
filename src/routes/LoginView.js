@@ -16,6 +16,9 @@ export default function LoginView() {
   2:login completo
   3:login pero sin registro
   4:no hay nadie logeado
+  5:ya existe el username
+  6:nuevo username, click para continuar
+
   */
 
   const [state,setCurrentState]=useState(0);
@@ -55,15 +58,15 @@ export default function LoginView() {
     }
   }
 
-function onUserLoggedIn(user){
+function handleUserLoggedIn(user){
   navigate("/dashboard")
 }
 
-function onUserNotRegistered(user){
+function handleUserNotRegistered(user){
   navigate("/choose-username")
 }
 
-function onUserNotLoggedIn(){
+function handleUserNotLoggedIn(){
   setCurrentState(4);
 }
 
@@ -80,9 +83,15 @@ function onUserNotLoggedIn(){
   </div>
   }
 
+  if (state ===5){
+    return <div>
+    <button onClick={handleOnClick}>Login with Google</button>
+  </div>
+  }
+
 
   return (
-    <AuthProvider onUserLoggedIn={onUserLoggedIn} onUserNotRegistered={onUserNotRegistered} onUserNotLoggedIn={onUserNotLoggedIn}>
+    <AuthProvider onUserLoggedIn={handleUserLoggedIn} onUserNotRegistered={handleUserNotRegistered} onUserNotLoggedIn={handleUserNotLoggedIn}>
       <div>Loading...</div>
     </AuthProvider>
   )
