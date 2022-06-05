@@ -2,7 +2,9 @@ import React from 'react'
 
 export default function LoginView() {
   return (
-    <div>LoginView</div>
+    <div>
+      <button>Login with Google</button>
+    </div>
   )
 }
 
