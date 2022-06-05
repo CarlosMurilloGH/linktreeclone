@@ -19,3 +19,10 @@ export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 export const db = getFirestore(app);
 export const storage = getStorage(app);
+
+export async function userExists(uid){
+    const docRef = doc(db,"users", uid);
+    const res = await getDoc(docRef);
+    console.log(res);
+    return res.exists();
+}
