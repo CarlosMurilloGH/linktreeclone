@@ -130,3 +130,13 @@ export async function setUserProfilephoto(uid,file){
     console.error(error);
   }
 }
+
+export async function getProfilePhotoUrl(profilePicture){
+  try {
+    const imageRef = ref(storage,profilePicture);
+    const url = await getDownloadURL(imageRef);
+    return url;
+  } catch (error) {
+    console.error(error);
+  }
+}
