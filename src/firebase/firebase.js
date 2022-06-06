@@ -1,4 +1,3 @@
-import React from "react";
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth";
 import {getStorage,ref,uploadBytes,getDownloadURL,getBytes} from "firebase/storage";
@@ -68,5 +67,66 @@ export async function getUserInfo(uid){
     return document.data();
   } catch (error) {
     
+  }
+}
+
+export async function insertNewLink(link){
+  try {
+    const docRef=collection(db,"links");
+    const res= await addDoc(docRef,link);
+    return res;
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
+export async function getLinks(uid){
+  const links=[];
+  try {
+    //busco en la coleccion de links
+    const collectionRef = collection(db,"links");
+    //hago mi consulta en links,en donde el uid que tengo tiene que ser igual al que esta en el documento
+    const q = query(collectionRef,where("uid","==",uid));
+    //con getdocs traigo todos los documentos que cumplen con q
+    const querySnapshot= await getDocs(q);
+    querySnapshot.forEach(doc=>{
+      const link ={...doc.data()};
+      link.docId=doc.id;
+      links.push(link);
+    });
+    return links;
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export async function updateLink(docId,link){
+  try {
+    const docRef = doc(db,"links",docId);
+    const res = await setDoc(docRef,link);
+    return res;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function deleteLink(docId){
+  try {
+    const docRef=doc(db, "links",docId);
+    const res = await deleteDoc(docRef);
+    return res
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function setUserProfilephoto(uid,file){
+  try {
+    const imageRef = ref(storage,`images/${uid}`);
+    const resUpload = await uploadBytes(imageRef,file);
+  return resUpload
+  } catch (error) {
+    console.error(error);
   }
 }
