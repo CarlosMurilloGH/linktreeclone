@@ -1,8 +1,10 @@
 import React,{useState} from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 import AuthProvider from '../components/AuthProvider'
 import { existsUsername, updateUser } from '../firebase/firebase';
+
+import style from "./ChoosUsername.module.css"
 
 export default function ChooseUsernameView() {
 
@@ -44,19 +46,19 @@ export default function ChooseUsernameView() {
   }
 
   if(state=== 3 || state === 5){
-    return <div>
+    return <div className={style.ChooseUsernameContainer}>
       <h1>Bienvenido {currentUser.displayName}</h1>
       <p>Escoge un nombre de usuario</p>
       {state === 5? <p>El nombre de usuario ya existe</p> : ""}
-      <input onChange={handleInputUsername}/>
-      <button onClick={handleContinue}>Continua</button>
+      <input className='input' type="text" onChange={handleInputUsername}/>
+      <button className="btn" onClick={handleContinue}>Siguiente</button>
     </div>
   }
 
   if(state === 6){
-    return <div>
-      <p>Felicidades,ya puedes ir al dashboard</p>
-      <Link to="/dashboard">Continuar</Link>
+    return <div className={style.ChooseUsernameContainer}>
+      <h1>Felicidades,ya puedes ir a</h1>
+      <Link to="/dashboard">Dashboard</Link>
     </div>
   }
 

@@ -1,4 +1,5 @@
-import React,{useState,useRef, useEffect} from 'react'
+import React,{useState,useRef, useEffect} from 'react';
+import style from "./Link.module.css";
 
 export default function Link({docId,title,url,onDelete,onUpdate}) {
 
@@ -54,15 +55,19 @@ export default function Link({docId,title,url,onDelete,onUpdate}) {
     }
 
   return (
-    <div key={docId}>
-        <div>
-            {editTitle ? (<> <input ref={titleRef} onBlur={handleBlurTitle} value={currentTitle} onChange={handleChangeTitle}/> </>) : (<><button onClick={handleEditTitle}>Edit</button>{currentTitle}</>)}
+    <div className={style.link}>
+        <div className={style.info}>
+            <div className={style.linkTitle}>
+            {editTitle ? (<> <input ref={titleRef} onBlur={handleBlurTitle} value={currentTitle} onChange={handleChangeTitle}/> </>) 
+            : (<><button className={style.btnEdit} onClick={handleEditTitle}><span className='material-icons'>edit</span></button>{currentTitle}</>)}
         </div>
-        <div>
-            {editUrl ? (<><input ref={urlRef} onBlur={handleBlurUrl} value={currentUrl} onChange={handleChangeUrl} /> </>) : (<><button onClick={handleEditUrl}>Edit</button>{currentUrl}</>) }
         </div>
-        <div>
-            <button onClick={handleDelete}>Delete</button>
+        <div className={style.linkUrl}>
+            {editUrl ? (<><input ref={urlRef} onBlur={handleBlurUrl} value={currentUrl} onChange={handleChangeUrl} /> </>) 
+            : (<><button className={style.btnEdit} onClick={handleEditUrl}><span className='material-icons'>edit</span></button>{currentUrl}</>) }
+        </div>
+        <div className={style.linkActions}>
+            <button className={style.btnDelete} onClick={handleDelete}><span>Delete</span></button>
         </div>
   </div>
   )

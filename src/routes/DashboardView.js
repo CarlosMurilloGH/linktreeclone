@@ -6,6 +6,8 @@ import {v4 as uuidv4} from "uuid";
 import { deleteLink, getLinks, insertNewLink, updateLink } from '../firebase/firebase';
 import Link from "../components/Link";
 
+import style from "./DashboardView.module.css"
+
 export default function DashboardView() {
 
   const navigate = useNavigate();
@@ -87,15 +89,15 @@ export default function DashboardView() {
   return(
     <DashboardWrapper>
       <div>
-        <h1>Dashboard</h1>
-        <form action="" onSubmit={handleOnSubmit}>
+        <h1>Dashboard {currentUser.username}</h1>
+        <form className={style.entryContainer} action="" onSubmit={handleOnSubmit}>
           <label htmlFor='title'>Title</label>
-          <input name="title" onChange={handleOnChange}/>
+          <input className='input' name="title" onChange={handleOnChange}/>
 
           <label htmlFor='url'>Url</label>
-          <input name="url" onChange={handleOnChange}/>
+          <input className='input' name="url" onChange={handleOnChange}/>
 
-          <input type="submit" value="Create new link" />
+          <input className='btn' type="submit" value="Create new link" />
         </form>
         <div>
           {

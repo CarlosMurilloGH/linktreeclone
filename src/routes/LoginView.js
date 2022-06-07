@@ -1,8 +1,10 @@
-import React, { useEffect,useState } from 'react';
-import { GoogleAuthProvider, onAuthStateChanged, signInWithPopup } from 'firebase/auth';
-import { auth, userExists } from '../firebase/firebase';
+import React, { useState } from 'react';
+import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { auth } from '../firebase/firebase';
 import { useNavigate } from 'react-router-dom';
 import  AuthProvider from "../components/AuthProvider";
+
+import style from "./LoginView.module.css"
 
 export default function LoginView() {
 
@@ -18,7 +20,7 @@ export default function LoginView() {
   4:no hay nadie logeado
   5:ya existe el username
   6:nuevo username, click para continuar
-
+  7:user no existe
   */
 
   const [state,setCurrentState]=useState(0);
@@ -78,8 +80,9 @@ function handleUserNotLoggedIn(){
   //   return <div>Estas autenticado pero no registrado</div>
   // }
   if (state ===4){
-    return <div>
-    <button onClick={handleOnClick}>Login with Google</button>
+    return <div className={style.LoginView}>
+      <div><h1>Logeate</h1></div>
+    <button className={style.provider} onClick={handleOnClick}>Login with Google</button>
   </div>
   }
 

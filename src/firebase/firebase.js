@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import {getAuth} from "firebase/auth";
-import {getStorage,ref,uploadBytes,getDownloadURL,getBytes} from "firebase/storage";
+import {getStorage,ref,uploadBytes,getDownloadURL} from "firebase/storage";
 import {getFirestore, collection, addDoc, getDocs, doc, getDoc, query, where, deleteDoc, setDoc} from "firebase/firestore";
 
 
@@ -33,11 +33,10 @@ export async function existsUsername(username){
 
   const querySnapshot = await getDocs(q);
 
-  querySnapshot.forEach(doc =>{
+  querySnapshot.forEach((doc) =>{
     users.push(doc.data());
-
-    return users.length > 0 ? users[0].uid : null;
   })
+  return users.length > 0 ? users[0].uid : null;
 }
 
 export async function registerNewUser(user){
@@ -46,7 +45,7 @@ export async function registerNewUser(user){
     const docRef = doc(collectionRef, user.uid);
     await setDoc(docRef, user);
   } catch (error) {
-    
+    console.log(error)
   }
 }
 
@@ -56,7 +55,7 @@ export async function updateUser(user){
     const docRef=doc(collectionRef,user.uid);
     await setDoc(docRef,user);
   } catch (error) {
-    
+    console.log(error)
   }
 }
 
@@ -66,7 +65,7 @@ export async function getUserInfo(uid){
     const document = await getDoc(docRef);
     return document.data();
   } catch (error) {
-    
+    console.log(error)
   }
 }
 
@@ -139,4 +138,17 @@ export async function getProfilePhotoUrl(profilePicture){
   } catch (error) {
     console.error(error);
   }
+}
+
+export async function getUserPublicProfileInfo(uid){
+  const profileInfo = await getUserInfo(uid);
+  const linksInfo = await getLinks(uid);
+  return {
+    profileInfo:profileInfo,
+    linksInfo:linksInfo,
+  };
+}
+
+export async function logout(){
+  await auth.signOut();
 }
