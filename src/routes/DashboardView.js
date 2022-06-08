@@ -6,7 +6,8 @@ import {v4 as uuidv4} from "uuid";
 import { deleteLink, getLinks, insertNewLink, updateLink } from '../firebase/firebase';
 import Link from "../components/Link";
 
-import style from "./DashboardView.module.css"
+import style from "./DashboardView.module.css";
+import styleLinks from "../components/Link.module.css";
 
 export default function DashboardView() {
 
@@ -99,7 +100,7 @@ export default function DashboardView() {
 
           <input className='btn' type="submit" value="Create new link" />
         </form>
-        <div>
+        <div className={styleLinks.linksContainer}>
           {
             links.map((link) => (
               <Link key={link.docId} docId={link.docId} url={link.url} title={link.title} onDelete={handleDeleteLink} onUpdate={handleUpdateLink} />

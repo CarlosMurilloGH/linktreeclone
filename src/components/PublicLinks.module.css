@@ -1,0 +1,21 @@
+.PublicLinksContainer{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    padding:10px;
+}
+
+.PublicLinkContainer{
+    color:black;
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+    background-color: #facf23;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.publicLinkContainer:hover{
+    background-color: #e7be1a;
+}
