@@ -1,3 +1,7 @@
+.dashboardviewcontainer{
+  width: 500px;
+  margin:auto;
+}
 .entryContainer {
     display: flex;
     flex-direction: column;

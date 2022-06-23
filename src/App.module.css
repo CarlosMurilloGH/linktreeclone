@@ -1,0 +1,29 @@
+.herocontainer{
+  display: flex;
+  background-color: #004643;
+}
+
+.heroinfo{
+  padding: 7rem 2rem;
+}
+
+.title{
+  font-size: 3rem;
+  color:white;
+}
+
+.paragraph{
+  font-size: 1.5rem;
+  color:#abd1c6;
+  margin-top: 1rem;
+}
+
+.mainbutton{
+  background-color: #f9bc60;
+  border:none;
+  border-radius: 2px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 1rem;
+}

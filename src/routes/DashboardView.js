@@ -89,7 +89,7 @@ export default function DashboardView() {
 
   return(
     <DashboardWrapper>
-      <div>
+      <div className={style.dashboardviewcontainer}>
         <h1>Dashboard {currentUser.username}</h1>
         <form className={style.entryContainer} action="" onSubmit={handleOnSubmit}>
           <label htmlFor='title'>Title</label>
