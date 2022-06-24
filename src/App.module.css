@@ -1,10 +1,11 @@
 .herocontainer{
   display: flex;
+  justify-content:space-around;
   background-color: #004643;
 }
 
 .heroinfo{
-  padding: 7rem 2rem;
+  padding: 7rem 3rem;
 }
 
 .title{
@@ -27,3 +28,58 @@
   font-weight: 700;
   margin-top: 1rem;
 }
+
+
+.firstcta{
+  background-color: #abd1c6;
+  padding: 7rem 3rem;
+  color:#001e1d;
+  display: flex;
+  justify-content:space-around;
+}
+
+.infotext{
+  margin-top:auto;
+  margin-bottom: auto;
+}
+
+.titlefirstcta{
+  color:#001e1d;
+  font-size: 2rem;
+}
+
+.paragraphfirstcta{
+  color:#004643;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+.secondarybutton{
+  background-color: #004643;
+  border:none;
+  border-radius: 2px;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 1rem;
+  color:#fffffe;
+}
+
+.secondcta{
+  display: flex;
+  justify-content:space-around;
+  padding: 7rem 3rem;
+  background-color: #004643;
+}
+
+.titlesecondcta{
+  color:white;
+  font-size: 2rem;
+}
+
+.paragraphsecondcta{
+  color:#abd1c6;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
