@@ -6,16 +6,13 @@
 }
 
 .PublicLinkContainer{
-    color:black;
+    color:#001e1d;
     text-decoration: none;
     display: block;
     padding: 20px;
-    background-color: #facf23;
-    border-radius: 10px;
+    background-color: #f9bc60;
+    border-radius: 5px;
     font-weight: bold;
     font-size: 1rem;
 }
 
-.publicLinkContainer:hover{
-    background-color: #e7be1a;
-}

@@ -46,17 +46,19 @@ export default function PublicProfileView() {
   }
 
   return (
-    <div className={style.profileContainer}>
-      <div className={style.profilePicture}>
-        <img src={url} alt="profilepicture" />
-      </div>
-      <div>
-        <p>{profile?.profileInfo.username}</p>
-        <p>{profile?.profileInfo.displayname}</p>
-        <div className={styleLinks.PublicLinksContainer}>
-          {profile?.linksInfo.map((link)=>(
-            <PublicLink key={link.docId} url={link.url} title={link.title} />
-          ))}
+    <div className={style.publicprofilecontainer}>
+      <div className={style.profileContainer}>
+        <div className={style.profilePicture}>
+          <img src={url} alt="profilepicture" />
+        </div>
+        <div>
+          <h1 className={style.profilename}>{profile?.profileInfo.username}</h1>
+          <p>{profile?.profileInfo.displayname}</p>
+          <div className={styleLinks.PublicLinksContainer}>
+            {profile?.linksInfo.map((link)=>(
+              <PublicLink key={link.docId} url={link.url} title={link.title} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
