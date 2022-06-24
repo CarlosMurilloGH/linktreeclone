@@ -15,3 +15,16 @@
     padding: 10px 0;
     margin-bottom: 20px;
   }
+
+  .loading{
+    text-align: center;
+    height: 100vh;
+    background-color: #004643;
+  }
+
+  .loading p{
+    color:#fffffe;
+    padding-top: 50vh;
+    font-size: 2rem;
+    font-weight: bold;
+  }

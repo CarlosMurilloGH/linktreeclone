@@ -37,7 +37,9 @@ export default function DashboardView() {
   if(state === 0){
     return (
       <AuthProvider onUserLoggedIn={handleUserLoggedIn} onUserNotRegistered={handleUserNotRegistered} onUserNotLoggedIn={handleUserNotLoggedIn}>
-        Loading...
+        <div className={style.loading}>
+          <p>Loading...</p>
+        </div>
       </AuthProvider>
     )
   }

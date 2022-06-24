@@ -6,5 +6,15 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
+    background-color:#004643 ;
+    color: #fffffe;
   }
   
+  .dashboardlink{
+    color:#f9bc60;
+  }
+
+  .dashboardlink:active{
+    color:#f9bc60;
+  }
+

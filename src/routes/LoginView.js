@@ -98,7 +98,7 @@ function handleUserNotLoggedIn(){
   return (
     <AuthProvider onUserLoggedIn={handleUserLoggedIn} onUserNotRegistered={handleUserNotRegistered} onUserNotLoggedIn={handleUserNotLoggedIn}>
       <div className={style.loading}>
-        Loading...
+        <p>Loading...</p>
       </div>
     </AuthProvider>
   )

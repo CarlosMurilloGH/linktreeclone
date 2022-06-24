@@ -6,6 +6,7 @@
     align-items: center;
     text-align: center;
     flex-direction: column;
+    color: #fffffe;
   }
   .logincontainer{
     height: 100vh;
@@ -26,6 +27,14 @@
   }
 
   .loading{
+    text-align: center;
     height: 100vh;
     background-color: #004643;
+  }
+
+  .loading p{
+    color:#fffffe;
+    padding-top: 50vh;
+    font-size: 2rem;
+    font-weight: bold;
   }

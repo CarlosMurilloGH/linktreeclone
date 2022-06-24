@@ -58,7 +58,7 @@ export default function ChooseUsernameView() {
   if(state === 6){
     return <div className={style.ChooseUsernameContainer}>
       <h1>Felicidades,ya puedes ir a</h1>
-      <Link to="/dashboard">Dashboard</Link>
+      <Link to="/dashboard" className={style.dashboardlink}>Dashboard</Link>
     </div>
   }
 
