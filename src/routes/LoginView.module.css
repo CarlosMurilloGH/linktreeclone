@@ -24,3 +24,8 @@
     font-weight: bold;
     cursor: pointer;
   }
+
+  .loading{
+    height: 100vh;
+    background-color: #004643;
+  }
