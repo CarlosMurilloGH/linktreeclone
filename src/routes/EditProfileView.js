@@ -66,15 +66,17 @@ export default function EditProfileView() {
 
   return (
       <DashboardWrapper>
-        <div>
-          <h2>Edit profile info</h2>
-          <div className={style.profilePictureContainer}>
-            <div>
-              <img src={profileUrl} alt="" width={100} />
-            </div>
-            <div>
-              <button onClick={handleOpenFilePicker}className="btn" >Choose profile picture</button>
-              <input ref={fileRef} type="file" className={style.fileInput}  onChange={handleChangeFile} />
+        <div className={style.editprofilecontainer}>
+          <div className={style.editprofilebox}>
+            <h2>Edit profile info</h2>
+            <div className={style.profilePictureContainer}>
+              <div>
+                <img src={profileUrl} alt="" width={100} />
+              </div>
+              <div>
+                <button onClick={handleOpenFilePicker}className="btn" >Choose profile picture</button>
+                <input ref={fileRef} type="file" className={style.fileInput}  onChange={handleChangeFile} />
+              </div>
             </div>
           </div>
         </div>

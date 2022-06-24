@@ -10,7 +10,7 @@ function Navbar({children}) {
             <p className={style.logo}>LOGO</p>
         </div>
         <Link to="/dashboard">Dashboard</Link>
-        <Link to="/">Inicio</Link>
+        <Link to="/">Home</Link>
     </nav>
     <div className='main-container'>
         {children}

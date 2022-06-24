@@ -7,13 +7,19 @@
     text-align: center;
     flex-direction: column;
   }
-  
+  .logincontainer{
+    height: 100vh;
+    background-color: #004643;
+  }
+
   .provider {
+    margin-top: 1rem;
     border: none;
     width: 300px;
     padding: 10px 0;
-    color: white;
-    background-color: blue;
+    color: #001e1d;
+    background-color: #f9bc60;
     border-radius: 3px;
     text-align: center;
+    font-weight: bold;
   }

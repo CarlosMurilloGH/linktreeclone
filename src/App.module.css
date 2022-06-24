@@ -2,10 +2,12 @@
   display: flex;
   justify-content:space-around;
   background-color: #004643;
+  padding: 5rem 3rem;
 }
 
 .heroinfo{
-  padding: 7rem 3rem;
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
 .title{
@@ -14,7 +16,7 @@
 }
 
 .paragraph{
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color:#abd1c6;
   margin-top: 1rem;
 }
@@ -27,6 +29,7 @@
   font-size: 1rem;
   font-weight: 700;
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 
@@ -63,6 +66,7 @@
   font-weight: 700;
   margin-top: 1rem;
   color:#fffffe;
+  cursor: pointer;
 }
 
 .secondcta{
@@ -83,3 +87,41 @@
   margin-top: 1rem;
 }
 
+.righthero img{
+  width: 30vw;
+}
+
+.infoimage{
+  width: 30vw;
+}
+
+/* responsive */
+
+@media (max-width: 900px){
+  .herocontainer{
+    display: block;
+  }
+  .righthero img{
+    display: block!important;
+    margin: auto!important;
+    width: 50vw!important;
+  }
+
+
+  .firstcta{
+    display: inline-flex;
+    flex-direction: column-reverse;
+  }
+
+  .secondcta{
+    display: block;
+  }
+
+  .infoimagecontainer img{
+    padding-top: 2rem;
+    display: block!important;
+    margin-left: auto!important;
+    margin-right: auto!important;
+    width: 50vw!important;
+  }
+}

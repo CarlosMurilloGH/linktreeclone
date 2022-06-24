@@ -1,7 +1,10 @@
 import React from "react";
 import style from "./App.module.css";
+import { Link } from 'react-router-dom';
 
 import customize from "./media/customize-your-bio-link.png";
+import inonelink from "./media/everything-in-one-link.png";
+import share from "./media/share-bio-link.png";
 
 import Navbar from "./components/Navbar";
 
@@ -22,19 +25,19 @@ function App() {
             </div>
           </div>
           <div>
-            <button className={style.mainbutton}>Sign Up</button>
+            <Link to="/login"><button className={style.mainbutton}>Sign Up</button></Link> 
           </div>
         </div>
         
-        <div className="righthero">
-          <img style={{width:"23vw"}} src={customize} alt="customize your bio" />
+        <div className={style.righthero}>
+          <img src={customize} alt="customize your bio" />
         </div>
       </div>
 
 
       <div className={style.firstcta}>
-        <div>
-          <img style={{width:"23vw"}} src={customize} alt="customize your bio" />
+        <div className={style.infoimagecontainer}>
+          <img className={style.infoimage} src={inonelink} alt="customize your bio" />
         </div>
         <div className={style.infotext}>
           <h2 className={style.titlefirstcta}>
@@ -44,7 +47,7 @@ function App() {
             Connect your socials, website, store, videos, music, podcast, events and more. 
             It all comes together in a link in bio landing page designed to convert.
           </p>
-          <button className={style.secondarybutton}>Get started for free</button>
+          <Link to="/login"><button className={style.secondarybutton}>Get started for free</button></Link>
         </div>
       </div>
 
@@ -58,10 +61,10 @@ function App() {
             Add your unique Linktree URL to all the platforms and places you find your audience. 
             Then use your QR code to drive your offline traffic online.
           </p>
-          <button className={style.mainbutton}>Get started for free</button>
+          <Link to="/login"><button className={style.mainbutton}>Get started for free</button></Link>
         </div>
-        <div>
-          <img style={{width:"23vw"}} src={customize} alt="customize your bio" />
+        <div className={style.infoimagecontainer}>
+          <img className={style.infoimage} src={share} alt="customize your bio" />
         </div>
       </div>
     </Navbar>

@@ -80,9 +80,11 @@ function handleUserNotLoggedIn(){
   //   return <div>Estas autenticado pero no registrado</div>
   // }
   if (state ===4){
-    return <div className={style.LoginView}>
-      <div><h1>Logeate</h1></div>
-    <button className={style.provider} onClick={handleOnClick}>Login with Google</button>
+    return <div className={style.logincontainer} >
+      <div className={style.LoginView}>
+        <h1>Log in with Google</h1>
+        <button className={style.provider} onClick={handleOnClick}>Login with Google</button>
+      </div>
   </div>
   }
 
