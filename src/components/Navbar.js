@@ -7,10 +7,9 @@ function Navbar({children}) {
     <div>
     <nav className={style.nav}>
         <div>
-            <p className={style.logo}>LOGO</p>
+            <p className={style.logo}>Linktree Clone</p>
         </div>
-        <Link to="/dashboard">Dashboard</Link>
-        <Link to="/">Home</Link>
+        <Link to="/dashboard">Log In</Link>
     </nav>
     <div className='main-container'>
         {children}
