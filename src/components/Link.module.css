@@ -5,13 +5,13 @@
 }
 
 .link {
-  background-color: white;
+  background-color: #004643;
   border-radius: 3px;
-
   display: flex;
   align-items: center;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   height: 5rem;
+  color:#fffffe;
 }
 
 .linkActions {
@@ -33,7 +33,7 @@
 
 .linkUrl {
   padding: 5px 0;
-  color: #555;
+  color: #abd1c6;
   text-transform: lowercase;
 }
 
@@ -43,22 +43,22 @@
   margin: 0;
   background-color: transparent;
   height: 16px;
-  color: #ccc;
+  color: #f9bc60;
   cursor: pointer;
 }
 .btnDelete {
   border: none;
   margin: 0;
   background-color: transparent;
-  color: #222;
+  color: #f9bc60;
   cursor: pointer;
   min-height: 100%;
   padding: 0 20px;
   flex: 1;
 }
 .btnDelete:hover {
-  background-color: red;
-  color: white;
+  background-color: #f9bc60;
+  color: #004643;
 }
 .btnDelete .material-icons {
   font-size: 24px;

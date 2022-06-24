@@ -7,10 +7,9 @@ function Navbar({children}) {
     <div>
     <nav className={style.nav}>
         <div>
-            <p>LOGO</p>
+            <p className={style.logo}>LOGO</p>
         </div>
         <Link to="/dashboard">Dashboard</Link>
-        <Link to="/contacto">Profile</Link>
         <Link to="/">Inicio</Link>
     </nav>
     <div className='main-container'>

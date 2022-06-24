@@ -1,6 +1,12 @@
 .dashboardviewcontainer{
-  width: 500px;
   margin:auto;
+  padding-top: 1rem;
+  background-color: #abd1c6;
+  height: 100vh;
+}
+.dashboardcontainer{
+  width: 60vw;
+  margin: auto;
 }
 .entryContainer {
     display: flex;

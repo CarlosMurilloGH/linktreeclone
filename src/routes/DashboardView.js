@@ -90,6 +90,7 @@ export default function DashboardView() {
   return(
     <DashboardWrapper>
       <div className={style.dashboardviewcontainer}>
+        <div className={style.dashboardcontainer}>
         <h1>Dashboard {currentUser.username}</h1>
         <form className={style.entryContainer} action="" onSubmit={handleOnSubmit}>
           <label htmlFor='title'>Title</label>
@@ -106,6 +107,7 @@ export default function DashboardView() {
               <Link key={link.docId} docId={link.docId} url={link.url} title={link.title} onDelete={handleDeleteLink} onUpdate={handleUpdateLink} />
             ))
           }
+        </div>
         </div>
       </div>
     </DashboardWrapper>
