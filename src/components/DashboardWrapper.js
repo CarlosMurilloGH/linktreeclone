@@ -8,7 +8,7 @@ export default function DashboardWrapper({children}) {
     <div>
         <nav className={style.nav}>
             <div className={style.logo}>
-                <p className={style.logo}>LOGO</p>
+                <p className={style.logo}>Linktree Clone</p>
             </div>
             <Link to="/dashboard">Dashboard</Link>
             <Link to="/dashboard/profile">Profile</Link>
